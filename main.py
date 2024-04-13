@@ -10,6 +10,10 @@ class CalculadoraMCD:
             a, b = b, a % b
         return a
 
+    def calcular_mcm(self):
+        mcd = self.calcular_mcd()
+        return (self.num1 * self.num2) // mcd
+
 
 def main():
     try:
@@ -18,7 +22,9 @@ def main():
 
         calculadora = CalculadoraMCD(num1, num2)
         mcd = calculadora.calcular_mcd()
+        mcm = calculadora.calcular_mcm()
         print(f"El máximo común divisor de {num1} y {num2} es: {mcd}")
+        print(f"El mínimo común múltiplo de {num1} y {num2} es: {mcm}")
     except ValueError:
         print("Error: Ingresa números enteros válidos.")
 
